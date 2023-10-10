@@ -1,0 +1,261 @@
+
+
+/* Main content area */
+#content {
+    font-family: custom_70545, "Aeonik Pro", "Arial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+#cardSlots,
+#cardPile {
+    display: grid;
+}
+
+/* Individual cards and slots */
+#cardSlots div,
+#cardPile .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d2d2d5;
+    font-family: custom_70545, "Aeonik Pro", "Arial", sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border: none;
+}
+
+.data {
+    flex-direction: column;
+    text-align: left;
+}
+
+
+#cardPile .card {
+    background: #ebebed;
+    color: #000;
+    font-size: 24px;
+}
+
+
+#cardSlots div.hovered {
+    background: #ff977e;
+    color: #ff6a47;
+}
+
+#cardSlots div {
+    border: 2px solid #ff977e;
+    border-style: dashed;
+    color: #ff977e;
+}
+
+
+#cardPile div.ui-draggable-dragging:before {
+    position: absolute;
+    top: -50px;
+    right: -100px;
+}
+
+.card .correct-answer {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 64px;
+    height: 64px;
+    color: #39175b;
+    text-align: center;
+    background-color: #ff6fff;
+    border-radius: 100%;
+    display: none;
+}
+
+.correct-answer .correct-number {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.correct-answer .years {
+    font-size: 14px;
+    /*margin-top: -2px;*/
+}
+
+
+.card.correct>.correct-answer {
+    display: block;
+}
+
+/* "Well done" message */
+#successMessage {
+    position: absolute;
+    left: 180px;
+    top: 400px;
+    z-index: 100;
+
+}
+
+.message {
+    font-size: 59px;
+    color: #52002D;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* 76.7px */
+    letter-spacing: 0.59px;
+}
+
+@media screen and (min-width: 769px) {
+
+    #content {
+        width: 860px;
+        height: 492px;
+        gap: 40px;
+    }
+
+
+    #cardSlots,
+    #cardPile {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    #cardSlots div,
+    #cardPile .card {
+        width: 410px;
+        height: 226px;
+    }
+
+    #cardPile .card {
+        font-size: 24px;
+    }
+
+    #cardSlots div {
+        font-size: 38px;
+    }
+
+    .data {
+        width: 340px;
+    }
+
+    .name {
+        padding-bottom: 12px;
+    }
+
+    .profession {
+        font-size: 16px;
+    }
+
+    #cardPile img {
+        width: 80px;
+        height: 80px;
+        padding-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #content {
+        width: 688px;
+        height: 788px;
+        gap: 20px;
+    }
+
+
+    #cardSlots,
+    #cardPile {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #cardSlots div,
+    #cardPile .card {
+        width: 334px;
+        height: 182px;
+    }
+
+    #cardSlots div {
+        font-size: 24px;
+    }
+
+    #cardPile .card {
+        font-size: 16px;
+    }
+
+    .data {
+        width: 294px;
+    }
+
+    .name {
+        padding-bottom: 8px;
+    }
+
+    .profession {
+        font-size: 14px;
+    }
+
+    #cardPile img {
+        width: 64px;
+        height: 64px;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    #content {
+        width: 432px;
+        height: 580px;
+        gap: 16px;
+    }
+
+    #cardSlots,
+    #cardPile {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    #cardSlots div {
+        font-size: 20px;
+    }
+
+    .data {
+        width: 174px;
+    }
+
+    .name {
+        padding-bottom: 4px;
+    }
+
+    .profession {
+        font-size: 14px;
+    }
+
+    #cardPile img {
+        width: 48px;
+        height: 48px;
+        padding-bottom: 10px;
+    }
+
+    #cardSlots div,
+    #cardPile .card {
+        width: 206px;
+        height: 130px;
+    }
+
+    #cardPile .card {
+        font-size: 16x;
+    }
+}
